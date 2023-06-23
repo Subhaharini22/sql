@@ -1,0 +1,204 @@
+/*const user_data=[
+    {
+        id:1,
+        name:'sub',
+        age:20,
+        email:'rnnfek'
+    }
+];
+
+//crud
+export const adduser =(new_user) =>{
+    //add a new user in user_data
+      user_data.push(newuser)
+}
+
+export const edituser=(id,key,value)=>{
+    //edit
+   user_data[id-1][key]=value;
+}
+export const editmany=(id=1,updatevalue={
+    name:'har',
+  age:25
+})=>{
+    const user_index=user_data.findIndex((user)=>user.id==id);
+    if(user_index != -1){
+        user_data[user_index]={
+            ...user_data[user_index],
+            ...updatevalue
+        }
+        user_data[user_index]={
+        //existing value
+            id:1,
+        name:'sub',
+        age:20,
+        email:'rnnfek',
+//updated value
+        name:'har',
+    age:25
+        }
+    }
+}
+
+export const dltuser=(id)=>{
+    //delete the user object from the array
+   // user_data.pull(1,"age");
+
+   const user_index=user_data.findIndex((user)=>user.id==id);
+    if(user_index != -1){
+        user_data.splice(user_index,1);
+}
+}
+
+const newuser={
+        id:2,
+        name:'sanj',
+        age:21,
+        email:'rnnfek'
+}
+
+adduser(newuser);
+edituser(2,"name","srii");
+
+dltuser(1,"age");
+console.log(user_data)
+
+*/
+
+export const user_data=[
+    {
+        id:1,
+        name:'sub',
+        age:20,
+        email:'rnnfek'
+    }
+];
+
+export const adduser =(new_user) =>{
+    user_data.push(new_user);
+}
+export const edituser=(id,key,value)=>{
+    const user_index=user_data.findIndex((user)=>user.id==id);
+    if(user_index!=-1)
+    user_data[user_index][key]=value;
+}
+export const dltuser=(id)=>{
+    const user_index=user_data.findIndex((user)=>user.id==id);
+    if(user_index != -1){
+        user_data.splice(user_index,1);
+}
+}
+export default user_data;
+
+
+/*import useri,{ user_data,adduser as add,edituser as edit,dltuser as dlt} from "./userModules.js";
+  let add1={
+    id:45,
+    name:'vith',
+    age:12,
+    email:'bwjh'
+};
+add(add1)
+dlt(1)
+edit(45,'name','vach')
+console.log(user_data); */
+
+//DOM - document object model
+//document.body.innerText='subhaa!!';//text will be inserted
+//document.body.innerHTML='<div> Happyyy birthday Sathishh uhh </div>'//the content inside the div is inserted
+/*document.body.style.backgroundColor="lightgreen";
+
+console.log(document.body.children);
+const allChild= document.body.children;
+setTimeout(()=>{allChild[0].style.color="green";
+allChild[0].innerText="green";},3000);
+setTimeout(()=>{allChild[1].style.color="pink";
+allChild[1].innerText="pink";
+},6000);
+setTimeout(()=>{allChild[2].style.color="red";
+allChild[2].innerText="red";},9000);
+
+let refresh=true;
+setInterval(() => {
+    allChild[0].style.color=(refresh?"voilet":"orange");
+    refresh=!refresh;
+}, 2000);
+setInterval(() => {
+    allChild[1].style.color=(refresh?"voilet":"voilet");
+    refresh=!refresh;
+}, 2000);
+setInterval(() => {
+    allChild[2].style.color=(refresh?"blue":"voilet");
+    refresh=!refresh;
+}, 2000);*/
+
+//selector
+
+/*const tag=document.getElementsByClassName('subb');
+tag[0].innerText='loveyouu';
+console.log(tag);
+const id=document.getElementsById('cute');
+id.innerText='id based selection';
+*/
+
+const button=document.getElementsById('login-button');
+const username=document.getElementById('user');
+const password=document.getElementById('pass');
+const form=document.getElementById('login');
+button.addEventListner('click',(event)=>{
+    console.log('click');
+})
+form.addEventListner('submit',(event)=>{
+    event.preventDefault();
+    console.log('submit',username.value,password.value);
+})
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sub</title>
+    <!--<style>
+        div{
+            background-color: greenyellow;
+            color: black;
+            border: 1px solid pink;
+            margin: ;
+        }
+    </style>-->
+</head>
+
+<body>
+    <!--<span>sece</span>
+    <div>hello sub!</div>
+    <style>
+        span{
+            background-color: greenyellow;
+            color: black;
+            border: 1px solid pink;
+        }
+        </style>
+        <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum explicabo nobis quibusdam aperiam inventore nisi praesentium reiciendis, dignissimos provident quaerat fugit ut ipsam eveniet. Odio autem minima quas odit illo. </div>
+        <div> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus officiis, doloremque consequuntur eum explicabo vitae, fuga minus expedita enim dignissimos quo asperiores, nostrum facere ut quis voluptatem a assumenda. Alias?</div>
+        <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae accusamus minus consequuntur totam. Quaerat, aliquid exercitationem optio ea sapiente tenetur corrupti enim id consequatur quis. Dolor, repellat! Numquam, et porro. </div>
+    -->
+    <div>
+        <form id="login" action="">
+            <div>
+                <label for="user">USERNAME</label>
+                <input type="text" name="USERNAME" id="user"><!--user is giver then cursor automatically goes to id -->
+            </div>
+            <div>
+                <label for="pass">PASSWORD</label>
+                <input type="password" name="password" id="pass">
+            </div>
+             
+            <button id="login-button">Login<button>
+        </form>
+      
+    </div>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
