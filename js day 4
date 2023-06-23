@@ -1,0 +1,167 @@
+function isPalindrome(str) {
+    let j = str.length-1
+    for(let i=0; i<str.length/2; i++){
+        if(str[i]!=str[j]){
+            return false;
+        }
+        j--;
+    }
+    return true;
+}
+  
+let s = "racecar";
+let s2 = "nitin";
+let s3 = "Rama";
+  
+console.log(isPalindrome(s));
+console.log(isPalindrome(s2));
+console.log(isPalindrome(s3));
+
+let string="malayalam";
+let pal=string.split('');
+pal.reverse;
+console.log(pal);
+console.log(pal)
+if(string==pal)
+    console.log(true);
+else
+    console.log(false);
+
+let ob=[2,8,0,5];
+for(let key of ob){
+    console.log(key)
+}
+
+let nam=["sub","sanj","sv","venu"];
+nam.forEach((ele) => {
+    console.log(ele);
+})
+let nam1=["sub","sanj","sv","venu"];
+nam1.forEach((ele1) => {
+    console.log(ele1*ele1);
+})
+let nam2=["sub","sanj","sv","venu"];
+let num=[1,2,3,4,5,8,9,90,57];
+num.forEach((ele2) => 
+    console.log(ele2*ele2)
+)
+
+let nam3=["sub","sanj","sv","venu"];
+let a1=nam3.map(ele =>ele.repeat(2));
+console.log(a1);
+
+let nam4=["sub","sanj","sv","venu"];
+let a2=nam4.map(ele =>{
+    return ele.repeat(3)}
+    );
+console.log(a2);
+
+let ans=num.filter(ele=>{
+    return !(ele%2);
+});
+console.log(ans);
+
+let nobj=[{
+    name:"sub",
+    dob:2004
+},
+{
+    name:"ajay",
+    dob:2005
+},
+{
+    name:"sanj",
+    dob:2003
+},
+{
+    name:"sv",
+    dob:2002
+}];
+let ansarr=nobj.map(ele => {
+    if( ele.dob>=2003)
+     return ele.name;
+});
+
+console.log(ansarr);
+let ansarr1=nobj.filter(ele => 
+    ele.dob>=2003);
+let ans1=ansarr1.map(ele=>ele.name);
+console.log(ans1);
+
+let ansarr2=nobj.filter(ele => 
+    ele.dob>=2003).map(ele=>ele.name);
+    console.log(ansarr2);
+
+    const array=[1,2,3,4,5];
+    const array1=array;
+    array[1]=900;
+    console.log(array1,array)
+
+    const ocp={
+        nam:"sub",
+        yr:"2222",
+        nam:"sece"
+    };
+    const ocp2={...ocp};
+    ocp.yr=2345;
+    console.log(ocp,ocp2);
+
+ let emp=[{
+    empn:"sub",
+    empa:23,
+    emps:25678
+ },
+ {
+    empn:"sanj",
+    empa:24,
+    emps:20678
+ },
+ {
+    empn:"sv",
+    empa:28,
+    emps:45678
+ },
+ {
+    empn:"subha",
+    empa:43,
+    emps:200678
+ }]
+ let ans2=emp.filter(ele=> ele.emps>=25000).map(ele => {
+    return {name: ele.empn,age: ele.empa};
+ });
+ console.log(ans2);
+
+ //de-structuring --> unpacking elements
+
+ let nums=[10,20,30,40,50,60,70,80,90,100];
+ //let [c1,c2,c3,c4,...c5]=nums;//... rest operator
+ //console.log(c1,c2,c3,c4,c5)
+
+ //let [c1,c2,,c3,c4]=nums;
+ //console.log(c1,c2,c3,c4);
+
+ let [c1,c2,,c3,c4,...c5]=nums
+ console.log(c1,c2,c3,c4,c5);
+
+ let obj={
+    clgname:"sece",
+    year:2334,
+    city:"cbe",
+    dep:"ece",
+    mail:"yuguy",
+    clr:"blue"
+ };
+ //let {clgname: clg,year,city,...restkeys}=obj;
+ //console.log(clg,year,city,restkeys);
+
+ let {clgname: clg,year,city,clr="green"}=obj;//rename operator
+ console.log(clg,year,city,clr);//default value is printed
+
+
+
+const vicky=async()=>{
+    const promise_api=await fetch('https://jsonplaceholder.typicode.com/todos');
+    const data =await promise_api.json();
+    console.log(data);
+}
+vicky();
