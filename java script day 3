@@ -1,0 +1,100 @@
+
+const a=Object.freeze({
+    name:'subha',
+    age:20,
+    dept:'ece'
+});
+delete a.name;
+console.log(a); 
+
+const b=Object.keys({
+    name:'subha',
+    age:20,
+    dept:'ece'
+});
+delete b.name;
+console.log(b); 
+
+const c=Object.values({
+    name:'subha',
+    age:20,
+    dept:'ece'
+});
+delete c.name;
+console.log(c); 
+
+const d={
+    name:'d',
+    age:60,
+}
+const e={...d};
+e.name='sub';0
+console.log(d,e)
+
+const details={
+
+   street:'second',
+    city:'cbe'
+}
+
+console.log(details.keys)
+//function
+function sum(n1,n2){
+    if(typeof n1 !== 'number'|| typeof n2 !=='number'){
+        return 'Invalid Number'
+    }
+    return n1+n2;
+}
+console.log(sum(10,20));
+ 
+//function sum1(n3,n4)->n3+n4
+const add=(x,y)=>x+y;
+const sub=(x,y)=>x-y;
+const cal=(x,y,o)=>{
+    return o(x,y)
+}
+console.log(cal(10,30,add));
+console.log(cal(10,30,sub));
+
+let str1="   im in college";
+let str2=str1.trim()
+let str3=str1.replace('e','s')
+let str4=str1.replaceAll('o','s')
+console.log(str2,str3)
+
+let arr=[1,undefined,true,null,"123",'4',6.25,(num1)=>num1*10,{p:1,q:2,s:3,say_hello:()=>"hello"}];
+console.log(arr[4][1]);
+
+for(key in arr[5]){
+    console.log(key,arr[5][key])
+}
+
+let arr1=[1,2,3,4,5];
+arr1.push(6,7,8,9,10);
+console.log(arr1)
+arr1.pop();
+console.log(arr1)
+
+let names=["subha","ajay","mughil","gowtham"]
+let names_sliced=names.slice(2,3);
+console.log(names,names_sliced)
+
+let name1=["subha","ajay","mughil","gowtham"]
+console.log(name1.splice(name1.length,0,"surya","guhan"));
+
+console.log(name1.slice(1,4));
+console.log(name1);
+console.log(name1.splice(1,2))
+
+let b1="ajith";
+console.log(b1.slice(1,b1.length));
+
+let str5=[1,2,3,"subha"," harini ajith"];
+console.log(str5.join('*'))
+
+//console.log(charAt(12));
+
+let str7="sub jkhd khwi";
+let str8=str7.toUpperCase();
+console.log(str8)
+console.log(str8.toLowerCase());
